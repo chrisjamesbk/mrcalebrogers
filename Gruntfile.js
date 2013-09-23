@@ -25,7 +25,8 @@ module.exports = function(grunt) {
       },
       build: {
         expand: true, // Enable dynamic expansion
-        src: ['_/js/*.js', '!_/js/libs/**', '!_/js/build/**'],
+        cwd: '_/js/',
+        src: ['*.js', '!libs/**', '!build/**'],
         dest: '_/js/build',
         ext: '.min.js'
       }
