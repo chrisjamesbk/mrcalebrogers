@@ -1,0 +1,20 @@
+{
+  "name": "mrcalebrogers",
+  "version": "0.0.0",
+  "homepage": "https://github.com/chrisjamesbk/mrcalebrogers",
+  "authors": [
+    "Chris James <chrisjamesbk@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.9.1",
+    "requirejs": "~2.1.8"
+  }
+}

@@ -1,5 +1,5 @@
 // smartresize by Paul Irish: http://paulirish.com/2009/throttled-smartresize-jquery-event-handler/
-(function($,sr){
+;(function($,sr){
     var debounce = function (func, threshold, execAsap) {
         var timeout;
         return function debounced () {
@@ -16,11 +16,11 @@
             timeout = setTimeout(delayed, threshold || 100); 
         };
     }
-    // smartresize 
+    // smartresize
     jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 })(jQuery,'smartresize');
 
 /* usage:
-$(window).smartresize(function(){  
+$(window).smartresize(function(){
   // code that takes it easy...
 }); */
