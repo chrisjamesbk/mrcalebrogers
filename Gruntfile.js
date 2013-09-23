@@ -18,6 +18,30 @@ module.exports = function(grunt) {
     //    }
     //  }
     //},
+    copyto: {
+      stuff: {
+        files: [
+          {
+            cwd: 'bower_components/',
+            src: ['**/*.js', '!**/dist/**', '!**/tests/**'],
+            dest: '_/js/libs/'
+          }
+        ],
+        options: {
+          processContent: function(content, path) {
+              // do something with content or return false to abort copy
+              return content;
+          },
+          // array of ignored paths, can be specific files or a glob
+          ignore: [
+            //'stuffdir/**/*.bak',
+            //'stuffdir/dontcopyme.txt',
+            // ignore both a directory and it's contents (brace expansion)
+            //'stuffdir/somedir{,/**/*}'
+          ]
+        }
+      }
+    },
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
@@ -26,7 +50,7 @@ module.exports = function(grunt) {
       build: {
         expand: true, // Enable dynamic expansion
         cwd: '_/js/',
-        src: ['*.js', '!libs/**', '!build/**'],
+        src: ['**/*.js', '!build/**'],
         dest: '_/js/build',
         ext: '.min.js'
       }
@@ -59,9 +83,10 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-copy-to');
 
   // Default task(s).
   // the default tasks can be run just by typing "grunt" on the command line
-  grunt.registerTask('default', ['less', 'uglify']);
+  grunt.registerTask('default', ['less', 'uglify', 'copyto']);
 
 };
