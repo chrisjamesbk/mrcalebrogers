@@ -87,6 +87,6 @@ module.exports = function(grunt) {
 
   // Default task(s).
   // the default tasks can be run just by typing "grunt" on the command line
-  grunt.registerTask('default', ['less', 'uglify', 'copyto']);
+  grunt.registerTask('default', ['copyto', 'uglify', 'less']);
 
 };
