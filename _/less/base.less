@@ -1,0 +1,73 @@
+// Base.less
+// -----------------------------------------------------------------
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: #333;
+}
+
+// FONTS
+// --------------------------------------------------
+// generate icon font at icomoon or other similar service
+@font-face {
+    font-family: 'custom-icons';
+    src: url('../fonts/custom-icons/icomoon.eot');
+    src: url('../fonts/custom-icons/icomoon.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/custom-icons/icomoon.woff') format('woff'),
+         url('../fonts/custom-icons/icomoon.ttf') format('truetype'),
+         url('../fonts/custom-icons/icomoon.svg#custom-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// HEADINGS
+// --------------------------------------------------
+
+// TEXT
+// --------------------------------------------------
+
+// ICONS
+// --------------------------------------------------
+// use: <i data-icon="f" aria-hidden="true"></i>
+i {
+    font-style: normal;
+}
+
+[data-icon]:before {
+    font-family: 'custom-icons';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+// LISTS
+// --------------------------------------------------
+
+// FORMS
+// --------------------------------------------------
+
+// TABLES
+// --------------------------------------------------
+
+// CODE
+// --------------------------------------------------
+
+// OTHER
+// --------------------------------------------------
+blockquote {
+    
+}
+
+figure {
+    
+}
+
+iframe {
+    display: block;
+}
