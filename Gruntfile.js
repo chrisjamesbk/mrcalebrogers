@@ -70,11 +70,11 @@ module.exports = function(grunt) {
         css: {
           files: "_/less/*",
           tasks: ["less"]
-        },
+        }/*,
         js: {
           files: '<%= uglify.build.src %>',
           tasks: ['uglify']
-        }
+        }*/
     }
   });
 

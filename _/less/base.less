@@ -6,14 +6,19 @@ html {
 
 body {
     margin: 0;
-    background: #fff;
+    background: url(../img/greytilet.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }
 
 // FONTS
 // --------------------------------------------------
 // generate icon font at icomoon or other similar service
-@font-face {
+/*@font-face {
     font-family: 'custom-icons';
     src: url('../fonts/custom-icons/icomoon.eot');
     src: url('../fonts/custom-icons/icomoon.eot?#iefix') format('embedded-opentype'),
@@ -22,7 +27,7 @@ body {
          url('../fonts/custom-icons/icomoon.svg#custom-icons') format('svg');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 // HEADINGS
 // --------------------------------------------------
@@ -33,7 +38,7 @@ body {
 // ICONS
 // --------------------------------------------------
 // use: <i data-icon="f" aria-hidden="true"></i>
-i {
+/*i {
     font-style: normal;
 }
 
@@ -44,7 +49,7 @@ i {
     font-weight: normal;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
-}
+}*/
 
 // LISTS
 // --------------------------------------------------
@@ -60,6 +65,18 @@ i {
 
 // OTHER
 // --------------------------------------------------
+.clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
 blockquote {
     
 }
