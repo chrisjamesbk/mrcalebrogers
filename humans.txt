@@ -3,15 +3,11 @@
 
 
 /* TEAM */
-  <your title>: <your name>
-  Site:
-  Twitter:
-  Location:
-
-/* THANKS */
-  Names (& URL):
+  Developer: Chris James
+  Site: http://chrisjamesbk.com
+  Twitter: @chrisjamesbk
+  Location: Brooklyn, NY
 
 /* SITE */
   Standards: HTML5, CSS3
-  Components: Modernizr, jQuery
-  Software:
+  Components: Modernizr, jQuery, Grunt, Bower
