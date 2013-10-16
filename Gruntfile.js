@@ -66,15 +66,49 @@ module.exports = function(grunt) {
             }
         }
     },
+    connect: {
+      options: {
+        port: 8443,
+        livereload: 35730,
+        // change this to '0.0.0.0' to access the server from outside
+        hostname: 'localhost'
+      },
+      livereload: {
+        options: {
+          open: true,
+          base: [
+            './'
+          ]
+        }
+      },
+      dist: {
+        options: {
+          open: true,
+          base: './'
+        }
+      }
+    },
     watch: {
         css: {
           files: "_/less/*",
           tasks: ["less"]
-        }/*,
+        },
+        /*
         js: {
           files: '<%= uglify.build.src %>',
           tasks: ['uglify']
-        }*/
+        },*/
+        livereload: {
+          options: {
+            livereload: '<%= connect.options.livereload %>'
+          },
+          files: [
+            '*.html',
+            '_/css/*.css',
+            '_/js/*.js',
+            '_/img/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          ]
+        }
     }
   });
 
@@ -84,6 +118,18 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-copy-to');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+
+  grunt.registerTask('server', function (target) {
+    if (target === 'dist') {
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
+    }
+
+    grunt.task.run([
+      'connect:livereload',
+      'watch'
+    ]);
+  });
 
   // Default task(s).
   // the default tasks can be run just by typing "grunt" on the command line
