@@ -21,9 +21,13 @@
 })(jQuery,'smartresize');
 
 (function($) {
-    $('.grid > li').hover(function(){
-        $(this).find('img').toggleClass('is-hidden');
-    })
+    $('.grid > li')
+        .hover(function(){
+            $(this).find('img').toggleClass('is-hidden');
+        })
+        .on('click', function(){
+            return false;
+        });
 })(jQuery);
 
 /* usage:
