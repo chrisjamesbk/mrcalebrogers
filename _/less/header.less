@@ -3,8 +3,10 @@
 
 header[role="banner"] {
     .box-sizing(border-box);
-    width: 18.5%;
-    height: 68px;
+    position: fixed;
+    z-index: 10;
+    width: 18.6%;
+    height: 56px;
     margin: 2em 0;
     background: #542c87;
     border-top: 6px solid #fff;
@@ -18,13 +20,15 @@ header[role="banner"] {
         font-family: serif;
         font-size: 2em;
         color: #fff;*/
-        height: 48px;
         > img {
             display: block;
             //width: 200px;
-            height: 48px;
+            height: 36px;
             margin: 0 auto;
         }
+    }
+    @media screen and (max-width: 920px) {
+        width: 100%;
     }
 }
 
@@ -33,5 +37,5 @@ footer {
     text-align: center;
     color: #fff;
     line-height: 24px;
-    padding-bottom: 2em;
+    padding-bottom: 8em;
 }

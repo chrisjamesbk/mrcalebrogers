@@ -7,18 +7,24 @@
             function delayed () {
                 if (!execAsap)
                     func.apply(obj, args);
-                timeout = null; 
+                timeout = null;
             };
             if (timeout)
                 clearTimeout(timeout);
             else if (execAsap)
                 func.apply(obj, args);
-            timeout = setTimeout(delayed, threshold || 100); 
+            timeout = setTimeout(delayed, threshold || 100);
         };
     }
     // smartresize
     jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 })(jQuery,'smartresize');
+
+(function($) {
+    $('.grid > li').hover(function(){
+        $(this).find('img').toggleClass('is-hidden');
+    })
+})(jQuery);
 
 /* usage:
 $(window).smartresize(function(){
