@@ -6,13 +6,18 @@
     width: 64%;
     max-width: 1600px;
     margin: 0 auto;
-    padding: 10em 0 0;
+    padding: 14em 0 0;
     list-style: none;
     > li {
         float: left;
         .box-sizing(border-box);
         width: 33.3333%;
         padding: 0 1% 30px;
+        &.middle {
+            clear: both;
+            float: none;
+            margin: 0 auto;
+        }
     }
     @media screen and (max-width: 1080px) {
         > li {
@@ -38,6 +43,7 @@
 }
 
 .img {
+    cursor: pointer;
     position: absolute;
     left: 0;
     top: 0;

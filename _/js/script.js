@@ -26,8 +26,19 @@
             $(this).find('img').toggleClass('is-hidden');
         })
         .on('click', function(){
-            return false;
+            var largeImg = $(this).find('.img').attr('data-img-lg');
+            var $modalBkgd = $('.modal-bkgd');
+            var $modal = $('.modal-container');
+
+            $modal
+                .find('img').attr('src', largeImg).end()
+                .removeClass('is-hidden');
         });
+
+    $('.modal-close').on('click', function(){
+        $(this)
+            .closest('.modal-container').addClass('is-hidden');
+    });
 })(jQuery);
 
 /* usage:
